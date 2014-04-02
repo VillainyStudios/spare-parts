@@ -1,8 +1,7 @@
 # Comparison of get-random and system.random
-# Joshua Embrey <<mrschism@sdf.org>>; Joseph Preston <<jpreston86@gmail.com>>
+# Joshua Embrey <mrschism@sdf.org>; Joseph Preston <jpreston86@gmail.com>
 # 20140402
-#
-
+###############################################################################
 
 $samples = 0
 
