@@ -2,32 +2,32 @@
 
 # File type arrays and correct locations
 img=(
-	jpg
-	png
-	gif
+	'jpg'
+	'png'
+	'gif'
 )
-imgdir=./
+imgdir='./'
 
 audio=(
-	mp3
-	ogg
-	flac
+	'mp3'
+	'ogg'
+	'flac'
 )
-audiodir=./
+audiodir='./'
 
 doc=(
-	doc
-	docx
-	txt
+	'doc'
+	'docx'
+	'txt'
 )
-docdir=./
+docdir='./'
 
 vid=(
-	mp4
-	flv
-	webm
+	'mp4'
+	'flv'
+	'webm'
 )
-viddir=./
+viddir='./'
 
 # Determines the folders
 listing=`find . -mindepth 1 -maxdepth 1 -type d`
@@ -35,10 +35,12 @@ listing=`find . -mindepth 1 -maxdepth 1 -type d`
 ## for the work area below to sort.
 
 
-
-
 # does the actual work
+oldIFS="$IFS"
+IFS=$'\n'
 for n in $listing; do
+
+	echo '============='
 	echo "Running in $n"
 	pwd
 	pushd "$n"
@@ -56,3 +58,4 @@ for n in $listing; do
 	done
 	popd
 done
+IFS="$oldIFS"
