@@ -40,17 +40,19 @@ listing=`find . -mindepth 1 -maxdepth 1 -type d`
 # does the actual work
 for n in $listing; do
 	echo "Running in $n"
-	cd $n
+	pwd
+	pushd "$n"
+	pwd
 	for i in *; do
 		ext=${i##*\.}
 		case "$ext" in
 			"$img")  echo "$i is an image"; mv $i $imgdir;;
 			"$audio") echo "$i is an audio file"; mv $i $audiodir;;
 			"$doc") echo "$i is a document"; mv $i $docdir;;
-			"$vid") echo "$i is a document"; mv $i $viddir;;
+			"$vid") echo "$i is a video"; mv $i $viddir;;
 			*) continue;;
 	
 		esac
 	done
-	cd ..
+	popd
 done
